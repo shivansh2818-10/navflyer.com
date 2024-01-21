@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Flight Planner</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <style>
+        /* Your combined CSS here... */
+
+        /* Existing styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles */
+        .navbar-custom {
+            background-color: white; /* Set your desired color */
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+        }
+
+        .navbar-custom .navbar-brand, .navbar-custom .nav-link {
+            color: #333; /* Adjust the color to match your design */
+        }
+
+        /* ... Rest of your combined CSS ... */    
+/* Add padding to the footer for better spacing */
+/* Your existing styles */
+
+/* Footer Styles */
+.footer-custom {
+    background-color: #e7e7e7; /* Light grey background, you can change as needed */
+    color: #333; /* Dark text color for contrast */
+    padding: 1rem 0; /* Padding for top and bottom */
+    border-top: 1px solid #e7e7e7; /* A light border on the top for some visual separation */
+    text-align: center; /* Center the text */
+    position: absolute; /* Changed from relative to absolute */
+    bottom: 0;
+    width: 100%;
+}
+
+/* New style for body and html */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* New style for .content-wrap */
+.content-wrap {
+    min-height: calc(100% - 50px); /* Adjust 50px to the height of your footer */
+    margin-bottom: -50px; /* Adjust 50px to the height of your footer */
+    padding-bottom: 50px; /* Adjust 50px to the height of your footer */
+}
+
+/* Ensure the container inside the footer is not wider than the rest of the content */
+.container {
+    max-width: 1140px; /* This should match your site's max width if you've set one */
+}
+
+
+    </style>
+</head>
+<body>
+
+<!-- New Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">DronePlanner</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Features.html">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Pricing.html">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>About Us</h3>
+          <p>
+            Welcome to DroneAssistant.tech! Simplifying drone management for hobbyists and professionals. Optimize operations, save time, and focus on flying.
+             Join us to streamline your drone operations and take flight!
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h3>Contact Us</h3>
+          <form>
+            <div class="form-group">
+                <label for="nameInput">Name</label>
+                <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="emailInput">Email Address</label>
+                <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="messageTextarea">Message</label>
+                <textarea class="form-control" id="messageTextarea" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

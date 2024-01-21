@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Flight Planner</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="https://getlaunchlist.com/js/widget.js" defer></script>
+
+    <style>
+        /* Your combined CSS here... */
+
+        /* Existing styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles */
+        .navbar-custom {
+            background-color: white; /* Set your desired color */
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+        }
+
+        .navbar-custom .navbar-brand, .navbar-custom .nav-link {
+            color: #333; /* Adjust the color to match your design */
+        }
+
+        /* ... Rest of your combined CSS ... */
+    </style>
+</head>
+<body>
+
+<!-- New Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">DronePlanner</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Features.html">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Pricing.html">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!---->
+   <!-- Bootstrap JS, Popper.js, and jQuery -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<style>
+  .carousel-item img {
+      max-width: 100%; /* Ensures the image is never wider than the carousel */
+      max-height: 400px; /* Set a maximum height for the images */
+  }
+  #imageCarousel {
+      max-width: 800px; /* Set a maximum width for the entire carousel */
+      margin: auto; /* This centers the carousel if it's smaller than the screen width */
+  }
+  /* Improve Typography */
+body,h5,h2, p {
+    line-height: 1.6;
+    color: #000000; /* Change as per your color scheme */
+}
+body, h1, h3 ,h6  {
+    line-height: 1.6;
+    color: #ffffff; /* Change as per your color scheme */
+}
+
+
+
+
+h1, h2, h3 {
+    font-weight: 300; /* Lighter font for headings */
+}
+
+
+
+/* Enhance Buttons and Forms */
+.btn-primary {
+    background-color: #0062E6;
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 98, 230, .5); /* Subtle shadow */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #b0bdcb;
+}
+
+.form-control {
+    border: 1px solid #0e0e0e;
+    padding: .375rem .75rem;
+}
+
+
+/* Shadow and Transition Effects */
+.card {
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0,0,0,.15);
+}
+
+/* Hover Effects */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: #b3d7ff;
+    text-decoration: none;
+}
+
+a {
+    transition: color .3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Additional styles for map and other elements */
+.map-container {
+    border: 1px solid #000000;
+    margin-top: 2rem;
+}
+
+/* Add padding to the footer for better spacing */
+.footer-custom {
+    background-color: #f8f9fa; /* Light grey background, you can change as needed */
+    color: #333; /* Dark text color for contrast */
+    padding: 1rem 0; /* Padding for top and bottom */
+    border-top: 1px solid #e7e7e7; /* A light border on the top for some visual separation */
+    text-align: center; /* Center the text */
+}
+
+/* Ensure the container inside the footer is not wider than the rest of the content */
+.container {
+    max-width: 1140px; /* This should match your site's max width if you've set one */
+}
+
+/* Ensure the carousel is centered and has a max-height */
+#imageCarousel {
+    max-height: 500px; /* Adjust based on your preference */
+    margin-bottom: 2rem;
+}
+
+.carousel-item {
+    text-align: center; /* Center content inside the carousel */
+}
+/* Form styles */
+/* Form styles */
+/* Main content styles */
+main {
+    padding-top: 100px; /* Give space for the fixed header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 100px);
+    background-color: #f4f4f4;
+    padding: 0 30px;
+}
+
+.left-column, .right-column {
+    flex: 1;
+}
+
+.left-column {
+    max-width: 600px;
+}
+
+/* Form styles */
+/* Main content styles */
+main {
+    /* ... existing styles ... */
+}
+
+.hero-section {
+    position: relative; /* Add positioning context */
+    background-color: #000000; /* Example background color */
+    /* Add any additional styling for your hero section */
+}
+
+.trial-form {
+    /* Adjust the background, padding, etc., as needed */
+    background: #00000036;
+    padding: 2rem;
+    border-radius: .5rem;
+    /* Shadow to match your design */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 991px) {
+    /* On smaller screens, the form takes full width */
+    .hero-section .row > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .trial-form {
+        /* Reset any specific positioning if needed */
+    }
+}
+
+
+
+.register-form h3 {
+    color: #007bff;
+    margin-bottom: 20px; /* Increased spacing */
+    font-size: 24px; /* Adjust if needed */
+}
+
+.register-input {
+    width: calc(100% - 20px); /* Adjust width considering padding */
+    padding: 15px; /* Larger padding for a taller input field */
+    margin-bottom: 20px; /* Increased spacing */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Larger font size for better readability */
+}
+
+.register-submit {
+    width: 100%;
+    padding: 15px; /* Larger padding for a taller button */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px; /* Larger font size for the button text */
+}
+
+.register-submit:hover {
+    background-color: #0056b3;
+}
+
+
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #240df3;
+}
+
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #240df3;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left-column, .right-column {
+        max-width: none;
+    }
+
+    .trial-form {
+        margin-top: 20px;
+    }
+    .hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+#heroVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+
+  
+}
+
+</style>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+      <!-- Your existing carousel items -->
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+      <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+      <span class="sr-only">Next</span>
+  </a>
+</div>
+    <!-- Hero Section -->
+    
+<!-- Hero Section -->               
+<div id="hero" style="position: relative; overflow: hidden; height: 100vh; width: 100%;">
+    <div class="texture"></div> <!-- Assuming this is an overlay or pattern -->
+    
+    <video autoplay loop muted preload="auto" style="position: absolute; top: 0; left: 0; width: 100%; height: 80%; object-fit: cover; z-index: -1;">
+        <source src="video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container" style="position: relative; z-index: 2; height: 100%;">
+        <div class="row align-items-center" style="min-height: 90%;">
+            <!-- Hero Content -->
+        <div class="col-lg-8">
+            <h1 class="hero-title"><b>Welcome to DronePlanner</h1></b>
+            <h6 class="hero-subtitle"><b>Plan your flights with ease.</h6></b>
+        </div>
+
+ <!-----------------------------------------------------------------------------------Trial Form ------------------------------------------------------------------->
+
+         <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+         <div class="col-lg-4">
+                <div class="trial-form text-center">
+                    <h3><b>Signup</b></h3>
+                    <div class="launchlist-widget" data-key-id="psRx2j" data-height="180px"></div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+        <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!---->
+<!-- Features Section -->
+<!-- Features Section -->
+
+<div class="container my-6">
+    <h2 class="text-center mb-4">Our Features</h2>
+    <div class="row">
+        <!-- Route Planning -->
+        <div class="col-lg-6 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Route Planning</h5>
+                    <p class="card-text">Interactive map for plotting waypoints and adjusting flight paths.</p>
+                    <div id="routePlanningMap"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weather Data Integration -->
+        <div class="col-lg-6 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Weather Data Integration</h5>
+                    <p class="card-text">Display real-time weather data and forecasts.</p>
+                    <div id="weatherData"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- No-Fly Zone Information -->
+        <div class="col-lg-6 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">No-Fly Zone Information</h5>
+                    <p class="card-text">Shows restricted areas and no-fly zones on the map.</p>
+                    <div id="noFlyZoneMap"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pre and Post Flight Checklist -->
+        <div class="col-lg-6 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Pre and Post Flight Checklist</h5>
+                    <p class="card-text">Comprehensive checklists to ensure all pre-flight preparations and post-flight procedures are completed for safe drone operations.</p>
+                    <div id="flightChecklist"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Battery and Flight Time Estimation -->
+        <div class="col-lg-6 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Battery and Flight Time Estimation</h5>
+                    <p class="card-text">Estimate battery usage and total flight time.</p>
+                    <div id="batteryFlightTime"></div>
+                </div>
+            </div>
+        </div>      
+        <!-- Latest News -->
+        <div class="col-lg-6 mb-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Stay Informed with Latest News</h5>
+                    <p class="card-text">Stay up-to-date with drone regulations, industry news, and best practices for safe and compliant operations.</p>
+                </div>
+            </div>
+        </div>  
+        <!--  Visual Resumes-->
+                <div class="col-lg-6 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Impressive Visual Resumes</h5>
+                            <p class="card-text">Elevate Your Drone Profile: Showcase your skills and experience as a drone pilot with captivating visual resumes, attracting clients and establishing industry credibility.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- Your existing content ... -->
+
+<!-- Scripts for API Integration 
+<script>
+  // Script to initialize and integrate Mapping API
+  // Script to initialize and integrate Weather API
+  // Script to initialize and integrate Airspace API
+  // Script for custom algorithm for Battery and Flight Time Estimation
+</script>-->
+<!-- Contact Form Section -->
+<!-- Contact Form Section -->
+<div class="container my-5">
+  <h2 class="text-center mb-4">Contact Us</h2>
+  <div class="row">
+      <div class="col-md-6">
+        <form class="feedback-form" action="https://formsubmit.co/ziadrone22@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="https://example.com/thank-you.html" />
+            <input type="hidden" name="_captcha" value="false" />
+                        <div class="form-group">
+                  <label for="nameInput">Name</label>
+                  <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" required>
+              </div>
+              <div class="form-group">
+                  <label for="emailInput">Email Address</label>
+                  <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" required>
+              </div>
+
+              <div class="form-group">
+                  <label for="messageTextarea">Message</label>
+                  <textarea class="form-control" id="messageTextarea" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+      </div>
+      <div class="col-md-6">
+          <h2>About Us</h2>
+          <p>
+            Welcome to DroneAssistant.tech! Simplifying drone management for hobbyists and professionals. Optimize operations, save time, and focus on flying.
+             Join us to streamline your drone operations and take flight!
+          </p>
+          <p><strong>Get in Touch</strong></p>
+      </div>
+  </div>
+</div>
+<!-- Footer -->
+<!-- Footer -->
+
+<footer class="footer-custom">
+    <div class="container">
+        <p class="mb-0">© 2023 DronePlanner. All rights reserved.</p>
+        
+    </div>
+</footer>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
