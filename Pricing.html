@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Flight Planner</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <style>
+        /* Your combined CSS here... */
+
+        /* Existing styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles */
+        .navbar-custom {
+            background-color: white; /* Set your desired color */
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+        }
+
+        .navbar-custom .navbar-brand, .navbar-custom .nav-link {
+            color: #333; /* Adjust the color to match your design */
+        }
+        /* Add padding to the footer for better spacing */
+       /* Add padding to the footer for better spacing */
+/* Your existing styles */
+
+/* Footer Styles */
+.footer-custom {
+    background-color: #e7e7e7; /* Light grey background, you can change as needed */
+    color: #333; /* Dark text color for contrast */
+    padding: 1rem 0; /* Padding for top and bottom */
+    border-top: 1px solid #e7e7e7; /* A light border on the top for some visual separation */
+    text-align: center; /* Center the text */
+    position: absolute; /* Changed from relative to absolute */
+    bottom: 0;
+    width: 100%;
+}
+
+/* New style for body and html */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* New style for .content-wrap */
+.content-wrap {
+    min-height: calc(100% - 50px); /* Adjust 50px to the height of your footer */
+    margin-bottom: -50px; /* Adjust 50px to the height of your footer */
+    padding-bottom: 50px; /* Adjust 50px to the height of your footer */
+}
+
+/* Ensure the container inside the footer is not wider than the rest of the content */
+.container {
+    max-width: 1140px; /* This should match your site's max width if you've set one */
+}
+
+
+        /* ... Rest of your combined CSS ... */
+    </style>
+</head>
+<body>
+
+<!-- New Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">DronePlanner</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Features.html">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Pricing.html">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Pricing Section -->
+<div class="pricing-section py-5">
+    <div class="container">
+        <div class="row justify-content-center"> <!-- Center align the row -->
+            <!-- Pricing Card 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Basic Plan</h3>
+                        <h1>$4.17<span class="text-muted">/mo</span></h1>
+                        <p class="card-text">Perfect for individuals</p>
+                        <ul class="list-unstyled">
+                            <li> Route Planning</li>
+                            <li>No-Fly Zone Information</li>
+                            <li>Impressive Visual Resumes</li>
+                            <li>Stay Informed with Latest News</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="#" class="btn btn-outline-primary w-100">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Card 2 - Highlighted Plan -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h3 class="card-title">Pro Plan</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <h1>$9.17<span class="text-muted">/mo</span></h1>
+                        <p class="card-text">Best for small businesses</p>
+                        <ul class="list-unstyled">
+                            <li>No-Fly Zone Information</li>
+                            <li>Route Planning </li>
+                            <li>Weather Data Integration</li>
+                            <li>Pre and Post Flight Checklist</li>
+                            <li>Battery and Flight Time Estimation</li>
+                            <li>Stay Informed with Latest News
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="#" class="btn btn-primary w-100">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<!-- Footer -->
+<footer class="footer-custom">
+    <div class="container">
+        <p class="mb-0">© 2023 DronePlanner. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
